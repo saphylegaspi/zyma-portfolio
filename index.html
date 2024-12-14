@@ -21,7 +21,7 @@
                     <div class="link"><a href="#">Services</a></div>
                     <div class="link"><a href="#">Contact</a></div>
                 </div>
-                <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+                <i class="fa-solid fa-bars hamburg" onclick="showDropdown()"></i>
             </div>
             <div class="dropdown">
                 <div class="links">
@@ -209,5 +209,26 @@
                     |&#169;2024 All Rights Reserved</span>
             </div>
         </footer>
+        <script>
+            // Function to display the dropdown menu
+            function showDropdown() {
+                const dropdown = document.querySelector('.dropdown');
+                dropdown.style.transform = 'translateY(0)'; // Bring dropdown into view
+                document.querySelector('.hamburg').style.opacity = '0'; // Hide hamburger icon
+                document.querySelector('.hamburg').style.pointerEvents = 'none'; // Disable clicks
+                document.querySelector('.cancel').style.opacity = '1'; // Show cancel icon
+                document.querySelector('.cancel').style.pointerEvents = 'auto'; // Enable clicks
+            }
+
+            // Function to hide the dropdown menu
+            function cancel() {
+                const dropdown = document.querySelector('.dropdown');
+                dropdown.style.transform = 'translateY(-500px)'; // Hide dropdown
+                document.querySelector('.hamburg').style.display = '1'; // Show hamburger icon
+                document.querySelector('.hamburg').style.pointerEvents = 'auto'; // Enable clicks
+                document.querySelector('.cancel').style.opacity = '0'; // Hide cancel icon
+                document.querySelector('.cancel').style.pointerEvents = 'none'; // Disable clicks
+            }
+        </script>
     </body>
 </html>
