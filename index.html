@@ -209,6 +209,7 @@
                     |&#169;2024 All Rights Reserved</span>
             </div>
         </footer>
+
         <script>
             // Function to display the dropdown menu
             function showDropdown() {
@@ -224,7 +225,7 @@
             function cancel() {
                 const dropdown = document.querySelector('.dropdown');
                 dropdown.style.transform = 'translateY(-500px)'; // Hide dropdown
-                document.querySelector('.hamburg').style.display = '1'; // Show hamburger icon
+                document.querySelector('.hamburg').style.opacity = '1'; // Show hamburger icon
                 document.querySelector('.hamburg').style.pointerEvents = 'auto'; // Enable clicks
                 document.querySelector('.cancel').style.opacity = '0'; // Hide cancel icon
                 document.querySelector('.cancel').style.pointerEvents = 'none'; // Disable clicks
