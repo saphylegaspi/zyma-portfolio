@@ -285,6 +285,7 @@ section .main-container{
     font-weight: 700;
     transition: all 0.3s ease;
     cursor: pointer;
+    text-wrap: nowrap;
 }
 
 .email-button:hover {
@@ -560,14 +561,16 @@ section .button button:hover {
     text-align: center;
     border-radius: 12px;
     padding: 30px 10px;
+    background-color: rgba(0, 0, 0, 0.2) !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
     cursor: default;
     color: white;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease-in-out !important;
+    margin-top: 20px;
 }
 
 .services .boxes .box:hover {
-    background: #b74b4b;
+    background: #b74b4b !important;
     color: #fff;
 }
 
@@ -598,17 +601,95 @@ section .button button:hover {
     color: #fff;
 }
 /* Contact Me CSS*/
-.contact{
-    background: black;
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75h;
+    padding: 0 20px;
+    background: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.contact .content{
-    margin: 0 auto;
-    padding: 30px 0;
-}
-.contact .text{
-    width: 80%;
+
+.contact .content {
     text-align: center;
-    margin: auto;
+    max-width: 600px;
+}
+
+.contact .title span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.contact-item {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.location-card,
+.phone-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid maroon;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease-in-out;
+}
+
+.phone-card {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.location-card {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.location-card:hover,
+.phone-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid red;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.location-icon,
+.phone-icon {
+    color: red;
+}
+
+.location-text,
+.phone-text {
+    font-size: 1rem;
+    color: white;
+}
+
+/* Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0s; }
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 footer{
@@ -680,7 +761,6 @@ footer .text span a:hover{
     }
     .services .boxes .box {
         margin: 20px 0;
-        width: calc(100% / 2 - 20px);
     }
 }
 
